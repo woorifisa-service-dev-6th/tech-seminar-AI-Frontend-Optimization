@@ -1,6 +1,13 @@
-# Performance Analyzer
+# Frontend Performance Analyzer
 
-프론트엔드 성능 분석 및 최적화 도구
+Chrome DevTools MCP를 활용한 프론트엔드 성능 병목 자동 분석 도구
+
+## 특징
+
+- Chrome DevTools MCP 기반 자동 성능 측정
+- 코드 레벨 병목 지점 정확한 식별
+- 실무 적용 가능한 개선 코드 제안
+- HTML 보고서 자동 생성
 
 ## 구조
 
@@ -16,6 +23,12 @@ perf-analyzer/
 └── result/
     ├── result.txt                        # 텍스트 보고서
     └── result.html                       # HTML 보고서
+```
+
+## 설치
+
+```bash
+npm install @seonjiwon/frontend-perf-analyzer
 ```
 
 ## 사용 방법
@@ -75,7 +88,11 @@ AI CLI에서 `/mcp` 입력 시 다음 함수들이 표시되면 준비 완료:
 - DETAILED_ANALYSIS: true # 코드 분석 여부 (true/false)
 ```
 
-### 3. MCP 지원 AI CLI에서 분석 실행
+### 3. AI에 입력
+
+1. Gemini Code Assist (또는 Claude) 에 init.md 에 따른 분석 수행 분석
+2. Chrome DevTools MCP 활성화 상태 확인
+3. 분석 시작
 
 다음 명령 입력:
 
@@ -85,22 +102,22 @@ perf-analyzer/init.md의 설정대로 분석을 시작해 주세요.
 
 ### 4. 결과 확인
 
-- `perf-analyzer/result/result.txt` - 텍스트 보고서
-- `perf-analyzer/result/result.html` - HTML 보고서
+- `result/result.txt` - 텍스트 보고서
+- `result/result.html` - 웹 페이지 보고서
 
-## 기본 시나리오
+## 시나리오
 
-### default-static-scenario
+### page-load
 
-- **대상**: 정적 페이지 초기 로딩
-- **측정**: LCP, FCP, CLS, TBT, Long Tasks
-- **분석 포커스**: SSR/SSG, 리소스 로딩, 번들 최적화
+페이지 초기 로드 성능 분석
 
-### default-interaction-scenario
+- LCP 측정
 
-- **대상**: 사용자 상호작용 (클릭, 입력 등)
-- **측정**: INP, Event Handler Duration, CLS
-- **분석 포커스**: 이벤트 핸들러, 상태 업데이트 최적화
+### interaction
+
+사용자 인터랙션 성능 분석
+
+- INP, CLS 측정
 
 ## DETAILED_ANALYSIS 옵션
 
@@ -119,9 +136,7 @@ perf-analyzer/init.md의 설정대로 분석을 시작해 주세요.
 | 메트릭 | 양호   | 개선필요  | 문제   |
 | ------ | ------ | --------- | ------ |
 | LCP    | <2.5s  | 2.5-4s    | >4s    |
-| FCP    | <1.8s  | 1.8-3s    | >3s    |
 | CLS    | <0.1   | 0.1-0.25  | >0.25  |
-| TBT    | <200ms | 200-300ms | >300ms |
 | INP    | <200ms | 200-500ms | >500ms |
 
 ## 분석 프로세스
@@ -146,8 +161,6 @@ perf-analyzer/init.md의 설정대로 분석을 시작해 주세요.
 - MCP 지원 AI CLI
 - 분석 대상 서버 실행 중
 
-## 팁
+## 문의
 
-- 첫 분석은 `DETAILED_ANALYSIS: false`로 빠른 병목 파악
-- 주요 병목 확인 후 `DETAILED_ANALYSIS: true`로 상세 분석
-- 커스텀 시나리오는 `scenarios/` 폴더에 `.md` 파일로 작성
+- Email: tommys915@gmail.com
