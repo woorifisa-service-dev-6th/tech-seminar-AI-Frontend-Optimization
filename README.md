@@ -3,10 +3,11 @@
 Chrome DevTools MCP를 활용한 프론트엔드 성능 병목 자동 분석 도구
 
 ## 데모 영상
+![demo-lcp](https://github.com/user-attachments/assets/96f92745-9782-4f4a-b883-36ab732a0016)
+<img width="1023" height="465" alt="demo-code-optimization" src="https://github.com/user-attachments/assets/fe7f8a4d-cd8f-4a8f-916a-ea757b2ca2ac" />
+<img width="1079" height="425" alt="demo-optim-report" src="https://github.com/user-attachments/assets/1071e790-4d98-4dff-b89a-559604496142" />
 
-![alt text](영상1.gif)
-![alt text](<스크린샷 2026-02-02 오전 9.34.41.png>)
-![alt text](<스크린샷 2026-02-02 오전 9.34.49.png>)
+
 
 ## 특징
 
