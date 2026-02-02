@@ -1,0 +1,28 @@
+{
+    "name": "@seonjiwon/frontend-perf-analyzer",
+    "version": "0.1.16",
+    "description": "Chrome DevTools MCP 기반 프론트엔드 성능 병목 자동 분석 도구",
+    "files": [
+        "perf-analyzer/",
+        "scripts/",
+        "README.md"
+    ],
+    "keywords": [
+        "performance",
+        "frontend",
+        "chrome-devtools",
+        "mcp",
+        "bottleneck",
+        "analysis",
+        "react",
+        "optimization"
+    ],
+    "license": "MIT",
+    "author": "Seon Jiwon <tommys915@gmail.com>",
+    "scripts": {
+        "postinstall": "node scripts/setup.js"
+    },
+    "dependencies": {
+        "@seonjiwon/frontend-perf-analyzer": "^0.1.3"
+    }
+}
